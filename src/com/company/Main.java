@@ -34,7 +34,11 @@ public class Main {
         for (j = i; j < args.length; j++) {
             inFiles.add(args[j]);
         }
-        MergeSort mergeSort = new MergeSort(sortMode, dataType, outputFileName);
-        mergeSort.sortArray(inFiles);
+        if (inFiles.size() < 1) {
+            System.out.println("No input files found.");
+        } else {
+            MergeSort mergeSort = new MergeSort(sortMode, dataType, outputFileName);
+            mergeSort.sortArray(inFiles);
+        }
     }
 }
